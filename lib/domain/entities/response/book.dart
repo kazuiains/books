@@ -13,6 +13,10 @@ class Book {
   String? mediaType;
   BookFormat? formats;
   num? downloadCount;
+  int? page;
+  int? tableId;
+  String? html;
+  bool? favorite;
 
   Book({
     this.id,
@@ -26,6 +30,10 @@ class Book {
     this.mediaType,
     this.formats,
     this.downloadCount,
+    this.page,
+    this.tableId,
+    this.html,
+    this.favorite,
   });
 
   Book copyWith({
@@ -40,6 +48,10 @@ class Book {
     String? mediaType,
     BookFormat? formats,
     num? downloadCount,
+    int? page,
+    int? tableId,
+    String? html,
+    bool? favorite,
   }) =>
       Book(
         id: id ?? this.id,
@@ -53,5 +65,9 @@ class Book {
         mediaType: mediaType ?? this.mediaType,
         formats: formats ?? this.formats,
         downloadCount: downloadCount ?? this.downloadCount,
+        page: page ?? this.page,
+        tableId: tableId ?? this.tableId,
+        html: html ?? this.html,
+        favorite: favorite ?? this.favorite,
       );
 }
