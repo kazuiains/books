@@ -2,7 +2,6 @@ import 'package:books/app/utils/helper/query_helper.dart';
 import 'package:books/data/models/base/base_response_model.dart';
 import 'package:books/data/models/request/book_request_model.dart';
 import 'package:books/data/models/response/book_model.dart';
-import 'package:books/data/providers/database/database_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
 abstract class BookLocalDataSource {
@@ -23,13 +22,16 @@ abstract class BookLocalDataSource {
 }
 
 class BookLocalDataSourceImpl with QueryHelper implements BookLocalDataSource {
-  final provider = DatabaseProvider.instance;
+  final Database database;
+
+  BookLocalDataSourceImpl({
+    required this.database,
+  });
+
   final tableName = bookModelTableName;
 
   @override
   Future<bool> backupBook(data, page) async {
-    final database = await provider.localDb;
-
     try {
       var args = <String>[];
 
@@ -45,10 +47,10 @@ class BookLocalDataSourceImpl with QueryHelper implements BookLocalDataSource {
         whereArgs: args,
       );
 
-      List<String> dataLocal = response.isNotEmpty
+      List<BookModel> dataLocal = response.isNotEmpty
           ? response
-              .map<String>(
-                (i) => "${BookModel.fromTable(i).id}",
+              .map<BookModel>(
+                (i) => BookModel.fromTable(i),
               )
               .toList()
           : [];
@@ -56,16 +58,19 @@ class BookLocalDataSourceImpl with QueryHelper implements BookLocalDataSource {
       Batch batch = database.batch();
 
       for (var i in data) {
-        if (!dataLocal.contains(i.id.toString())) {
-          batch.insert(tableName, i.toTable());
-        } else {
-          var entity = i.copyWith(
+        var items = dataLocal.where((i) => i.id == i.id);
+        Map<String, dynamic> tableData = BookModel.fromEntity(
+          i.copyWith(
             page: page,
-          );
+          ),
+        ).toTable();
 
+        if (items.isEmpty) {
+          batch.insert(tableName, tableData);
+        } else {
           batch.update(
             tableName,
-            BookModel.fromEntity(entity).toTable(),
+            tableData,
             where: '$bookModelColumn1 = ?',
             whereArgs: [i.id],
           );
@@ -82,8 +87,6 @@ class BookLocalDataSourceImpl with QueryHelper implements BookLocalDataSource {
 
   @override
   Future<bool> updateBook(data) async {
-    final database = await provider.localDb;
-
     try {
       final response = await database.query(
         tableName,
@@ -117,8 +120,7 @@ class BookLocalDataSourceImpl with QueryHelper implements BookLocalDataSource {
   Future<BaseResponseModel> listBook(
     data,
   ) async {
-    int page = int.parse(data.page ?? "0");
-    final database = await provider.localDb;
+    int page = int.parse(data.page ?? "1");
 
     try {
       String? where = data.toJson().keys.map((key) {
@@ -157,8 +159,6 @@ class BookLocalDataSourceImpl with QueryHelper implements BookLocalDataSource {
 
   @override
   Future<List<BookModel>> listFavorite() async {
-    final database = await provider.localDb;
-
     try {
       final response = await database.query(
         tableName,

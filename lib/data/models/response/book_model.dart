@@ -164,7 +164,7 @@ class BookModel extends Book {
           json[bookModelColumn7] != null && json[bookModelColumn7] != "" ? (jsonDecode(json[bookModelColumn7]) as List<dynamic>).cast<String>() : [];
       copyright = json[bookModelColumn8] == 1 ? true : false;
       mediaType = json[bookModelColumn9];
-      formats = BookFormatModel.fromJson(json[bookModelColumn10]);
+      formats = BookFormatModel.fromJson(jsonDecode(json[bookModelColumn10]));
       downloadCount = json[bookModelColumn11];
       page = json[bookModelColumn12];
       tableId = json[bookModelColumn13];
@@ -181,20 +181,20 @@ class BookModel extends Book {
     if (title != null) {
       map[bookModelColumn2] = title;
     }
-    if (authors != null && authors!.isNotEmpty) {
+    if (authors != null) {
       map[bookModelColumn3] = jsonEncode(authors?.map((v) => BookPersonModel.fromEntity(v).toJson()).toList());
     }
-    if (translators != null && translators!.isNotEmpty) {
+    if (translators != null) {
       map[bookModelColumn4] = jsonEncode(translators?.map((v) => BookPersonModel.fromEntity(v).toJson()).toList());
     }
-    if (subjects != null && subjects!.isNotEmpty) {
+    if (subjects != null) {
       map[bookModelColumn5] = jsonEncode(subjects);
     }
-    if (bookshelves != null && bookshelves!.isNotEmpty) {
+    if (bookshelves != null) {
       map[bookModelColumn6] = jsonEncode(bookshelves);
     }
     if (languages != null) {
-      map[bookModelColumn7] = languages != null && languages!.isNotEmpty ? jsonEncode(languages) : null;
+      map[bookModelColumn7] = jsonEncode(languages);
     }
     if (copyright != null) {
       map[bookModelColumn8] = copyright! ? 1 : 0;
@@ -203,7 +203,7 @@ class BookModel extends Book {
       map[bookModelColumn9] = mediaType;
     }
     if (formats != null) {
-      map[bookModelColumn10] = BookFormatModel.fromEntity(formats!).toJson();
+      map[bookModelColumn10] = jsonEncode(BookFormatModel.fromEntity(formats!).toJson());
     }
     if (downloadCount != null) {
       map[bookModelColumn11] = downloadCount;
@@ -213,6 +213,9 @@ class BookModel extends Book {
     }
     if (page != null) {
       map[bookModelColumn12] = page;
+    }
+    if (tableId != null) {
+      map[bookModelColumn13] = tableId;
     }
     if (html != null) {
       map[bookModelColumn14] = html;
