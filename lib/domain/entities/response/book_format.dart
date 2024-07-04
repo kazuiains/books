@@ -6,6 +6,11 @@ class BookFormat {
   String? imageJpeg;
   String? textPlainCharsetUsaSCII;
   String? applicationOCTETStream;
+  String? textHtmlCharsetUtf;
+  String? textHtmlCharsetIso;
+  String? textHtmlCharsetUsAscii;
+  String? textPlainCharsetUtf;
+  String? textPlainCharsetIso;
 
   BookFormat({
     this.textHtml,
@@ -15,6 +20,11 @@ class BookFormat {
     this.imageJpeg,
     this.textPlainCharsetUsaSCII,
     this.applicationOCTETStream,
+    this.textHtmlCharsetUtf,
+    this.textHtmlCharsetIso,
+    this.textHtmlCharsetUsAscii,
+    this.textPlainCharsetUtf,
+    this.textPlainCharsetIso,
   });
 
   BookFormat copyWith({
@@ -25,6 +35,11 @@ class BookFormat {
     String? imageJpeg,
     String? textPlainCharsetUsaSCII,
     String? applicationOCTETStream,
+    String? textHtmlCharsetUtf,
+    String? textHtmlCharsetIso,
+    String? textHtmlCharsetUsAscii,
+    String? textPlainCharsetUtf,
+    String? textPlainCharsetIso,
   }) =>
       BookFormat(
         textHtml: textHtml ?? this.textHtml,
@@ -34,5 +49,10 @@ class BookFormat {
         imageJpeg: imageJpeg ?? this.imageJpeg,
         textPlainCharsetUsaSCII: textPlainCharsetUsaSCII ?? this.textPlainCharsetUsaSCII,
         applicationOCTETStream: applicationOCTETStream ?? this.applicationOCTETStream,
+        textHtmlCharsetUtf: textHtmlCharsetUtf ?? this.textHtmlCharsetUtf,
+        textHtmlCharsetIso: textHtmlCharsetIso ?? this.textHtmlCharsetIso,
+        textHtmlCharsetUsAscii: textHtmlCharsetUsAscii ?? this.textHtmlCharsetUsAscii,
+        textPlainCharsetUtf: textPlainCharsetUtf ?? this.textPlainCharsetUtf,
+        textPlainCharsetIso: textPlainCharsetIso ?? this.textPlainCharsetIso,
       );
 }

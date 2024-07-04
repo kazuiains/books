@@ -41,12 +41,9 @@ class BookPersonModel extends BookPerson {
     if (name != null) {
       map['name'] = name;
     }
-    if (birthYear != null) {
-      map['birth_year'] = birthYear;
-    }
-    if (deathYear != null) {
-      map['death_year'] = deathYear;
-    }
+    map['birth_year'] = birthYear;
+    map['death_year'] = deathYear;
+
     return map;
   }
 }

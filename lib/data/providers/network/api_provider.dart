@@ -1,31 +1,53 @@
 import 'dart:async';
 
-import 'package:dio/dio.dart';
 import 'package:books/app/config/app_config.dart';
+import 'package:books/app/config/app_strings.dart';
 import 'package:books/app/exception/api_exception.dart';
-import 'package:books/data/providers/network/api_request_representable.dart';
+import 'package:dio/dio.dart';
+
+enum HTTPMethod {
+  get,
+  post,
+  delete,
+  put,
+  patch,
+  download,
+}
+
+extension HTTPMethodString on HTTPMethod {
+  String get string {
+    switch (this) {
+      case HTTPMethod.get:
+        return AppStrings.httpMethodGet;
+      case HTTPMethod.post:
+        return AppStrings.httpMethodPost;
+      case HTTPMethod.delete:
+        return AppStrings.httpMethodDelete;
+      case HTTPMethod.patch:
+        return AppStrings.httpMethodPatch;
+      case HTTPMethod.put:
+        return AppStrings.httpMethodPut;
+      case HTTPMethod.download:
+        return AppStrings.httpMethodDownload;
+    }
+  }
+}
 
 class APIProvider {
   static Dio setup({
-    Dio? customDio,
     String? baseUrl,
     Duration? connectTimeout,
     Duration? receiveTimeout,
     Duration? sendTimeout,
   }) {
-    Dio dio;
-    if (customDio != null) {
-      dio = customDio;
-    } else {
-      dio = Dio(
-        BaseOptions(
-          baseUrl: baseUrl ?? AppConfig.instance!.baseUrl,
-          connectTimeout: connectTimeout ?? const Duration(seconds: 30),
-          receiveTimeout: receiveTimeout ?? const Duration(seconds: 30),
-          sendTimeout: sendTimeout ?? const Duration(seconds: 30),
-        ),
-      )..httpClientAdapter;
-    }
+    Dio dio = Dio(
+      BaseOptions(
+        baseUrl: baseUrl ?? AppConfig.instance!.baseUrl,
+        connectTimeout: connectTimeout ?? const Duration(seconds: 30),
+        receiveTimeout: receiveTimeout ?? const Duration(seconds: 30),
+        sendTimeout: sendTimeout ?? const Duration(seconds: 30),
+      ),
+    )..httpClientAdapter;
 
     if (AppConfig.instance!.flavor == Flavor.development) {
       dio.interceptors.add(
@@ -48,41 +70,48 @@ class APIProvider {
   static APIProvider get instance => _singleton;
 
   Future request(
-    APIRequestRepresentable request, {
+    String urlPath, {
+    String? savePath,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? params,
+    dynamic body,
+    HTTPMethod? method,
+    String? contentType,
+    ResponseType? responseType,
     CancelToken? cancelToken,
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
-    bool deleteOnError = true,
-    String lengthHeader = Headers.contentLengthHeader,
+    bool? deleteOnError,
+    String? lengthHeader,
     Duration? connectTimeout,
     Duration? receiveTimeout,
     Duration? sendTimeout,
     String? baseUrl,
-    Dio? customDio,
+    Dio? dio,
   }) async {
     try {
-      final client = setup(
-        customDio: customDio,
-        baseUrl: baseUrl,
-        connectTimeout: connectTimeout,
-        sendTimeout: sendTimeout,
-        receiveTimeout: receiveTimeout,
-      );
+      final client = dio ??
+          setup(
+            baseUrl: baseUrl,
+            connectTimeout: connectTimeout,
+            sendTimeout: sendTimeout,
+            receiveTimeout: receiveTimeout,
+          );
 
       Response response;
 
       var options = Options(
-        headers: request.headers,
-        contentType: request.contentType,
-        responseType: request.responseType,
+        headers: headers,
+        contentType: contentType,
+        responseType: responseType,
         validateStatus: (statusCode) => statusCode == 200 || statusCode == 201,
       );
 
-      switch (request.method) {
+      switch (method ?? HTTPMethod.get) {
         case HTTPMethod.get:
           response = await client.get(
-            request.url,
-            queryParameters: request.query,
+            urlPath,
+            queryParameters: params,
             options: options,
             cancelToken: cancelToken,
             onReceiveProgress: onReceiveProgress,
@@ -90,9 +119,9 @@ class APIProvider {
           break;
         case HTTPMethod.post:
           response = await client.post(
-            request.url,
-            data: request.body,
-            queryParameters: request.query,
+            urlPath,
+            data: body,
+            queryParameters: params,
             options: options,
             cancelToken: cancelToken,
             onReceiveProgress: onReceiveProgress,
@@ -101,18 +130,18 @@ class APIProvider {
           break;
         case HTTPMethod.delete:
           response = await client.delete(
-            request.url,
-            data: request.body,
-            queryParameters: request.query,
+            urlPath,
+            data: body,
+            queryParameters: params,
             options: options,
             cancelToken: cancelToken,
           );
           break;
         case HTTPMethod.patch:
           response = await client.patch(
-            request.url,
-            data: request.body,
-            queryParameters: request.query,
+            urlPath,
+            data: body,
+            queryParameters: params,
             options: options,
             cancelToken: cancelToken,
             onReceiveProgress: onReceiveProgress,
@@ -121,9 +150,9 @@ class APIProvider {
           break;
         case HTTPMethod.put:
           response = await client.put(
-            request.url,
-            data: request.body,
-            queryParameters: request.query,
+            urlPath,
+            data: body,
+            queryParameters: params,
             options: options,
             cancelToken: cancelToken,
             onReceiveProgress: onReceiveProgress,
@@ -132,15 +161,15 @@ class APIProvider {
           break;
         case HTTPMethod.download:
           response = await client.download(
-            request.url,
-            request.savePath,
-            data: request.body,
-            queryParameters: request.query,
+            urlPath,
+            savePath,
+            data: body,
+            queryParameters: params,
             options: options,
             cancelToken: cancelToken,
             onReceiveProgress: onReceiveProgress,
-            deleteOnError: deleteOnError,
-            lengthHeader: lengthHeader,
+            deleteOnError: deleteOnError ?? true,
+            lengthHeader: lengthHeader ?? Headers.contentLengthHeader,
           );
           break;
       }

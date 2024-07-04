@@ -33,10 +33,25 @@ class BaseResponseModel extends BaseResponse {
       next = json['next'];
       previous = json['previous'];
 
-      var jsonResult = json[json['results']];
+      var jsonResult = json['results'];
       if (jsonResult != null) {
         results = response(jsonResult);
       }
     }
+  }
+
+  Map<String, dynamic> toJson(
+    Function(dynamic data) resultData,
+  ) {
+    final map = <String, dynamic>{};
+    if (count != null) {
+      map['count'] = count;
+    }
+    map['next'] = next;
+    map['previous'] = previous;
+    if (results != null) {
+      map['results'] = resultData(results);
+    }
+    return map;
   }
 }

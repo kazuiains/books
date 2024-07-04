@@ -3,7 +3,6 @@ import 'package:books/data/models/request/book_request_model.dart';
 import 'package:books/data/models/response/book_model.dart';
 import 'package:books/data/providers/network/api_data_source.dart';
 import 'package:books/data/providers/network/api_endpoint.dart';
-import 'package:books/data/providers/network/api_request_representable.dart';
 
 abstract class BookRemoteDataSource {
   Future<BaseResponseModel> listBook(
@@ -14,12 +13,15 @@ abstract class BookRemoteDataSource {
 }
 
 class BookRemoteDataSourceImpl extends ApiDataSource implements BookRemoteDataSource {
+  BookRemoteDataSourceImpl({
+    super.dio,
+  });
+
   @override
   Future<BaseResponseModel> listBook(BookRequestModel data) async {
     final response = await execute(
-      endpoint: ApiEndpoint.books,
+      urlPath: ApiEndpoint.books,
       params: data.toParam(),
-      method: HTTPMethod.get,
     );
 
     return BaseResponseModel.fromJson(
@@ -39,8 +41,7 @@ class BookRemoteDataSourceImpl extends ApiDataSource implements BookRemoteDataSo
     Uri uri = Uri.parse(data);
 
     return await execute(
-      path: uri.path,
-      method: HTTPMethod.get,
+      urlPath: uri.path,
     );
   }
 }

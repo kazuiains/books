@@ -15,6 +15,11 @@ class BookFormatModel extends BookFormat {
     super.imageJpeg,
     super.textPlainCharsetUsaSCII,
     super.applicationOCTETStream,
+    super.textHtmlCharsetUtf,
+    super.textHtmlCharsetIso,
+    super.textHtmlCharsetUsAscii,
+    super.textPlainCharsetUtf,
+    super.textPlainCharsetIso,
   });
 
   _initFromEntity(BookFormat entity) {
@@ -25,6 +30,11 @@ class BookFormatModel extends BookFormat {
     imageJpeg = entity.imageJpeg;
     textPlainCharsetUsaSCII = entity.textPlainCharsetUsaSCII;
     applicationOCTETStream = entity.applicationOCTETStream;
+    textHtmlCharsetUtf = entity.textHtmlCharsetUtf;
+    textHtmlCharsetIso = entity.textHtmlCharsetIso;
+    textHtmlCharsetUsAscii = entity.textHtmlCharsetUsAscii;
+    textPlainCharsetUtf = entity.textPlainCharsetUtf;
+    textPlainCharsetIso = entity.textPlainCharsetIso;
   }
 
   BookFormatModel.fromDynamic(dynamic dynamicEntity) {
@@ -45,6 +55,11 @@ class BookFormatModel extends BookFormat {
       imageJpeg = json['image/jpeg'];
       textPlainCharsetUsaSCII = json['text/plain; charset=us-ascii'];
       applicationOCTETStream = json['application/octet-stream'];
+      textHtmlCharsetUtf = json['text/html; charset=utf-8'];
+      textHtmlCharsetIso = json['text/html; charset=iso-8859-1'];
+      textHtmlCharsetUsAscii = json['text/html; charset=us-ascii'];
+      textPlainCharsetUtf = json['text/plain; charset=utf-8'];
+      textPlainCharsetIso = json['text/plain; charset=iso-8859-1'];
     }
   }
 
@@ -70,6 +85,21 @@ class BookFormatModel extends BookFormat {
     }
     if (applicationOCTETStream != null) {
       map['application/octet-stream'] = applicationOCTETStream;
+    }
+    if(textHtmlCharsetUtf != null){
+      map['text/html; charset=utf-8'] = textHtmlCharsetUtf;
+    }
+    if(textHtmlCharsetIso != null){
+      map['text/html; charset=iso-8859-1'] = textHtmlCharsetIso;
+    }
+    if(textHtmlCharsetUsAscii != null){
+      map['text/html; charset=us-ascii'] = textHtmlCharsetUsAscii;
+    }
+    if(textPlainCharsetUtf != null){
+      map['text/plain; charset=utf-8'] = textPlainCharsetUtf;
+    }
+    if(textPlainCharsetIso != null){
+      map['text/plain; charset=iso-8859-1'] = textPlainCharsetIso;
     }
     return map;
   }
