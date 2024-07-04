@@ -1,5 +1,5 @@
 {
-  "count": 73868,
+  "count": 73872,
   "next": "https://gutendex.com/books/?page=2",
   "previous": null,
   "results": [
@@ -38,7 +38,7 @@
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/1513.txt.utf-8",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/1513/pg1513-h.zip"
       },
-      "download_count": 72633
+      "download_count": 77782
     },
     {
       "id": 2701,
@@ -81,89 +81,7 @@
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/2701/pg2701-h.zip",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/2701.txt.utf-8"
       },
-      "download_count": 65191
-    },
-    {
-      "id": 84,
-      "title": "Frankenstein; Or, The Modern Prometheus",
-      "authors": [
-        {
-          "name": "Shelley, Mary Wollstonecraft",
-          "birth_year": 1797,
-          "death_year": 1851
-        }
-      ],
-      "translators": [],
-      "subjects": [
-        "Frankenstein's monster (Fictitious character) -- Fiction",
-        "Frankenstein, Victor (Fictitious character) -- Fiction",
-        "Gothic fiction",
-        "Horror tales",
-        "Monsters -- Fiction",
-        "Science fiction",
-        "Scientists -- Fiction"
-      ],
-      "bookshelves": [
-        "Gothic Fiction",
-        "Movie Books",
-        "Precursors of Science Fiction",
-        "Science Fiction by Women"
-      ],
-      "languages": [
-        "en"
-      ],
-      "copyright": false,
-      "media_type": "Text",
-      "formats": {
-        "text/html": "https://www.gutenberg.org/ebooks/84.html.images",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/84.epub3.images",
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/84.kf8.images",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/84.rdf",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/84/pg84.cover.medium.jpg",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/84.txt.utf-8",
-        "application/octet-stream": "https://www.gutenberg.org/cache/epub/84/pg84-h.zip"
-      },
-      "download_count": 64482
-    },
-    {
-      "id": 1342,
-      "title": "Pride and Prejudice",
-      "authors": [
-        {
-          "name": "Austen, Jane",
-          "birth_year": 1775,
-          "death_year": 1817
-        }
-      ],
-      "translators": [],
-      "subjects": [
-        "Courtship -- Fiction",
-        "Domestic fiction",
-        "England -- Fiction",
-        "Love stories",
-        "Sisters -- Fiction",
-        "Social classes -- Fiction",
-        "Young women -- Fiction"
-      ],
-      "bookshelves": [
-        "Best Books Ever Listings",
-        "Harvard Classics"
-      ],
-      "languages": [
-        "en"
-      ],
-      "copyright": false,
-      "media_type": "Text",
-      "formats": {
-        "text/html": "https://www.gutenberg.org/ebooks/1342.html.images",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/1342.epub3.images",
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1342.kf8.images",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/1342.rdf",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/1342.txt.utf-8",
-        "application/octet-stream": "https://www.gutenberg.org/cache/epub/1342/pg1342-h.zip"
-      },
-      "download_count": 54059
+      "download_count": 71888
     },
     {
       "id": 145,
@@ -204,7 +122,7 @@
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/145.txt.utf-8",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/145/pg145-h.zip"
       },
-      "download_count": 51000
+      "download_count": 54135
     },
     {
       "id": 2641,
@@ -241,7 +159,80 @@
         "image/jpeg": "https://www.gutenberg.org/cache/epub/2641/pg2641.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/2641/pg2641-h.zip"
       },
-      "download_count": 49392
+      "download_count": 53431
+    },
+    {
+      "id": 100,
+      "title": "The Complete Works of William Shakespeare",
+      "authors": [
+        {
+          "name": "Shakespeare, William",
+          "birth_year": 1564,
+          "death_year": 1616
+        }
+      ],
+      "translators": [],
+      "subjects": [
+        "English drama -- Early modern and Elizabethan, 1500-1600"
+      ],
+      "bookshelves": [
+        "Plays"
+      ],
+      "languages": [
+        "en"
+      ],
+      "copyright": false,
+      "media_type": "Text",
+      "formats": {
+        "text/html": "https://www.gutenberg.org/ebooks/100.html.images",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/100.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/100.kf8.images",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/100.txt.utf-8",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/100.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/100/pg100.cover.medium.jpg",
+        "application/octet-stream": "https://www.gutenberg.org/cache/epub/100/pg100-h.zip"
+      },
+      "download_count": 52348
+    },
+    {
+      "id": 1342,
+      "title": "Pride and Prejudice",
+      "authors": [
+        {
+          "name": "Austen, Jane",
+          "birth_year": 1775,
+          "death_year": 1817
+        }
+      ],
+      "translators": [],
+      "subjects": [
+        "Courtship -- Fiction",
+        "Domestic fiction",
+        "England -- Fiction",
+        "Love stories",
+        "Sisters -- Fiction",
+        "Social classes -- Fiction",
+        "Young women -- Fiction"
+      ],
+      "bookshelves": [
+        "Best Books Ever Listings",
+        "Harvard Classics"
+      ],
+      "languages": [
+        "en"
+      ],
+      "copyright": false,
+      "media_type": "Text",
+      "formats": {
+        "text/html": "https://www.gutenberg.org/ebooks/1342.html.images",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/1342.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1342.kf8.images",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/1342.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/1342.txt.utf-8",
+        "application/octet-stream": "https://www.gutenberg.org/cache/epub/1342/pg1342-h.zip"
+      },
+      "download_count": 51755
     },
     {
       "id": 37106,
@@ -281,39 +272,6 @@
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/37106.txt.utf-8"
       },
       "download_count": 48385
-    },
-    {
-      "id": 100,
-      "title": "The Complete Works of William Shakespeare",
-      "authors": [
-        {
-          "name": "Shakespeare, William",
-          "birth_year": 1564,
-          "death_year": 1616
-        }
-      ],
-      "translators": [],
-      "subjects": [
-        "English drama -- Early modern and Elizabethan, 1500-1600"
-      ],
-      "bookshelves": [
-        "Plays"
-      ],
-      "languages": [
-        "en"
-      ],
-      "copyright": false,
-      "media_type": "Text",
-      "formats": {
-        "text/html": "https://www.gutenberg.org/ebooks/100.html.images",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/100.epub3.images",
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/100.kf8.images",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/100.txt.utf-8",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/100.rdf",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/100/pg100.cover.medium.jpg",
-        "application/octet-stream": "https://www.gutenberg.org/cache/epub/100/pg100-h.zip"
-      },
-      "download_count": 48303
     },
     {
       "id": 67979,
@@ -423,40 +381,6 @@
       "download_count": 44083
     },
     {
-      "id": 6761,
-      "title": "The Adventures of Ferdinand Count Fathom — Complete",
-      "authors": [
-        {
-          "name": "Smollett, T. (Tobias)",
-          "birth_year": 1721,
-          "death_year": 1771
-        }
-      ],
-      "translators": [],
-      "subjects": [
-        "Adventure stories",
-        "Gothic fiction"
-      ],
-      "bookshelves": [
-        "Best Books Ever Listings"
-      ],
-      "languages": [
-        "en"
-      ],
-      "copyright": false,
-      "media_type": "Text",
-      "formats": {
-        "text/html": "https://www.gutenberg.org/ebooks/6761.html.images",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/6761.epub3.images",
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/6761.kf8.images",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/6761.rdf",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/6761/pg6761.cover.medium.jpg",
-        "application/octet-stream": "https://www.gutenberg.org/files/6761/6761-0.zip",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/6761.txt.utf-8"
-      },
-      "download_count": 40809
-    },
-    {
       "id": 394,
       "title": "Cranford",
       "authors": [
@@ -490,7 +414,7 @@
         "application/octet-stream": "https://www.gutenberg.org/files/394/394-0.zip",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/394.txt.utf-8"
       },
-      "download_count": 40366
+      "download_count": 43699
     },
     {
       "id": 4085,
@@ -533,7 +457,7 @@
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/4085/pg4085-h.zip",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/4085.txt.utf-8"
       },
-      "download_count": 39510
+      "download_count": 43089
     },
     {
       "id": 2160,
@@ -571,7 +495,81 @@
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/2160/pg2160-h.zip",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/2160.txt.utf-8"
       },
-      "download_count": 39322
+      "download_count": 42964
+    },
+    {
+      "id": 1259,
+      "title": "Twenty years after",
+      "authors": [
+        {
+          "name": "Dumas, Alexandre",
+          "birth_year": 1802,
+          "death_year": 1870
+        },
+        {
+          "name": "Maquet, Auguste",
+          "birth_year": 1813,
+          "death_year": 1888
+        }
+      ],
+      "translators": [],
+      "subjects": [
+        "France -- History -- Louis XIV, 1643-1715 -- Fiction"
+      ],
+      "bookshelves": [
+        "Adventure",
+        "Historical Fiction",
+        "Movie Books"
+      ],
+      "languages": [
+        "en"
+      ],
+      "copyright": false,
+      "media_type": "Text",
+      "formats": {
+        "text/html": "https://www.gutenberg.org/ebooks/1259.html.images",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/1259.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1259.kf8.images",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/1259.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/1259/pg1259.cover.medium.jpg",
+        "application/octet-stream": "https://www.gutenberg.org/files/1259/1259-0.zip",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/1259.txt.utf-8"
+      },
+      "download_count": 41906
+    },
+    {
+      "id": 6761,
+      "title": "The Adventures of Ferdinand Count Fathom — Complete",
+      "authors": [
+        {
+          "name": "Smollett, T. (Tobias)",
+          "birth_year": 1721,
+          "death_year": 1771
+        }
+      ],
+      "translators": [],
+      "subjects": [
+        "Adventure stories",
+        "Gothic fiction"
+      ],
+      "bookshelves": [
+        "Best Books Ever Listings"
+      ],
+      "languages": [
+        "en"
+      ],
+      "copyright": false,
+      "media_type": "Text",
+      "formats": {
+        "text/html": "https://www.gutenberg.org/ebooks/6761.html.images",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/6761.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/6761.kf8.images",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/6761.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/6761/pg6761.cover.medium.jpg",
+        "application/octet-stream": "https://www.gutenberg.org/files/6761/6761-0.zip",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/6761.txt.utf-8"
+      },
+      "download_count": 40809
     },
     {
       "id": 6593,
@@ -616,46 +614,6 @@
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/6593.txt.utf-8"
       },
       "download_count": 38775
-    },
-    {
-      "id": 1259,
-      "title": "Twenty years after",
-      "authors": [
-        {
-          "name": "Dumas, Alexandre",
-          "birth_year": 1802,
-          "death_year": 1870
-        },
-        {
-          "name": "Maquet, Auguste",
-          "birth_year": 1813,
-          "death_year": 1888
-        }
-      ],
-      "translators": [],
-      "subjects": [
-        "France -- History -- Louis XIV, 1643-1715 -- Fiction"
-      ],
-      "bookshelves": [
-        "Adventure",
-        "Historical Fiction",
-        "Movie Books"
-      ],
-      "languages": [
-        "en"
-      ],
-      "copyright": false,
-      "media_type": "Text",
-      "formats": {
-        "text/html": "https://www.gutenberg.org/ebooks/1259.html.images",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/1259.epub3.images",
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1259.kf8.images",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/1259.rdf",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/1259/pg1259.cover.medium.jpg",
-        "application/octet-stream": "https://www.gutenberg.org/files/1259/1259-0.zip",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/1259.txt.utf-8"
-      },
-      "download_count": 38175
     },
     {
       "id": 5197,
@@ -723,32 +681,33 @@
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/11.txt.utf-8",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/11/pg11-h.zip"
       },
-      "download_count": 37727
+      "download_count": 37443
     },
     {
-      "id": 174,
-      "title": "The Picture of Dorian Gray",
+      "id": 84,
+      "title": "Frankenstein; Or, The Modern Prometheus",
       "authors": [
         {
-          "name": "Wilde, Oscar",
-          "birth_year": 1854,
-          "death_year": 1900
+          "name": "Shelley, Mary Wollstonecraft",
+          "birth_year": 1797,
+          "death_year": 1851
         }
       ],
       "translators": [],
       "subjects": [
-        "Appearance (Philosophy) -- Fiction",
-        "Conduct of life -- Fiction",
-        "Didactic fiction",
-        "Great Britain -- History -- Victoria, 1837-1901 -- Fiction",
-        "London (England) -- History -- 1800-1950 -- Fiction",
-        "Paranormal fiction",
-        "Portraits -- Fiction",
-        "Supernatural -- Fiction"
+        "Frankenstein's monster (Fictitious character) -- Fiction",
+        "Frankenstein, Victor (Fictitious character) -- Fiction",
+        "Gothic fiction",
+        "Horror tales",
+        "Monsters -- Fiction",
+        "Science fiction",
+        "Scientists -- Fiction"
       ],
       "bookshelves": [
         "Gothic Fiction",
-        "Movie Books"
+        "Movie Books",
+        "Precursors of Science Fiction",
+        "Science Fiction by Women"
       ],
       "languages": [
         "en"
@@ -756,131 +715,15 @@
       "copyright": false,
       "media_type": "Text",
       "formats": {
-        "text/html": "https://www.gutenberg.org/ebooks/174.html.images",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/174.epub3.images",
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/174.kf8.images",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/174.rdf",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/174/pg174.cover.medium.jpg",
-        "application/octet-stream": "https://www.gutenberg.org/files/174/174-0.zip",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/174.txt.utf-8"
+        "text/html": "https://www.gutenberg.org/ebooks/84.html.images",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/84.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/84.kf8.images",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/84.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/84/pg84.cover.medium.jpg",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/84.txt.utf-8",
+        "application/octet-stream": "https://www.gutenberg.org/cache/epub/84/pg84-h.zip"
       },
-      "download_count": 23428
-    },
-    {
-      "id": 844,
-      "title": "The Importance of Being Earnest: A Trivial Comedy for Serious People",
-      "authors": [
-        {
-          "name": "Wilde, Oscar",
-          "birth_year": 1854,
-          "death_year": 1900
-        }
-      ],
-      "translators": [],
-      "subjects": [
-        "Comedies",
-        "England -- Drama",
-        "Foundlings -- Drama",
-        "Identity (Psychology) -- Drama"
-      ],
-      "bookshelves": [
-        "Plays"
-      ],
-      "languages": [
-        "en"
-      ],
-      "copyright": false,
-      "media_type": "Text",
-      "formats": {
-        "text/html": "https://www.gutenberg.org/ebooks/844.html.images",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/844.epub3.images",
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/844.kf8.images",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/files/844/844-0.txt",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/844.rdf",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/844/pg844.cover.medium.jpg",
-        "application/octet-stream": "https://www.gutenberg.org/cache/epub/844/pg844-h.zip",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/844.txt.utf-8"
-      },
-      "download_count": 22887
-    },
-    {
-      "id": 98,
-      "title": "A Tale of Two Cities",
-      "authors": [
-        {
-          "name": "Dickens, Charles",
-          "birth_year": 1812,
-          "death_year": 1870
-        }
-      ],
-      "translators": [],
-      "subjects": [
-        "British -- France -- Paris -- Fiction",
-        "Executions and executioners -- Fiction",
-        "France -- History -- Revolution, 1789-1799 -- Fiction",
-        "French -- England -- London -- Fiction",
-        "Historical fiction",
-        "London (England) -- History -- 18th century -- Fiction",
-        "Lookalikes -- Fiction",
-        "Paris (France) -- History -- 1789-1799 -- Fiction",
-        "War stories"
-      ],
-      "bookshelves": [
-        "Historical Fiction"
-      ],
-      "languages": [
-        "en"
-      ],
-      "copyright": false,
-      "media_type": "Text",
-      "formats": {
-        "text/html": "https://www.gutenberg.org/ebooks/98.html.images",
-        "text/html; charset=utf-8": "https://www.gutenberg.org/files/98/98-h/98-h.htm",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/98.epub3.images",
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/98.kf8.images",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/files/98/98-0.txt",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/98.rdf",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/98/pg98.cover.medium.jpg",
-        "application/octet-stream": "https://www.gutenberg.org/cache/epub/98/pg98-h.zip",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/98.txt.utf-8"
-      },
-      "download_count": 22885
-    },
-    {
-      "id": 2542,
-      "title": "A Doll's House : a play",
-      "authors": [
-        {
-          "name": "Ibsen, Henrik",
-          "birth_year": 1828,
-          "death_year": 1906
-        }
-      ],
-      "translators": [],
-      "subjects": [
-        "Man-woman relationships -- Drama",
-        "Marriage -- Drama",
-        "Norwegian drama -- Translations into English",
-        "Wives -- Drama"
-      ],
-      "bookshelves": [
-        "Best Books Ever Listings"
-      ],
-      "languages": [
-        "en"
-      ],
-      "copyright": false,
-      "media_type": "Text",
-      "formats": {
-        "text/html": "https://www.gutenberg.org/ebooks/2542.html.images",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/2542.epub3.images",
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/2542.kf8.images",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/2542.rdf",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/2542/pg2542.cover.medium.jpg",
-        "application/octet-stream": "https://www.gutenberg.org/files/2542/2542-0.zip",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/2542.txt.utf-8"
-      },
-      "download_count": 22358
+      "download_count": 33505
     },
     {
       "id": 5200,
@@ -969,7 +812,7 @@
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/2554/pg2554-h.zip",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/2554.txt.utf-8"
       },
-      "download_count": 21411
+      "download_count": 20166
     },
     {
       "id": 345,
@@ -1011,7 +854,48 @@
         "image/jpeg": "https://www.gutenberg.org/cache/epub/345/pg345.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/345/pg345-h.zip"
       },
-      "download_count": 21410
+      "download_count": 19657
+    },
+    {
+      "id": 174,
+      "title": "The Picture of Dorian Gray",
+      "authors": [
+        {
+          "name": "Wilde, Oscar",
+          "birth_year": 1854,
+          "death_year": 1900
+        }
+      ],
+      "translators": [],
+      "subjects": [
+        "Appearance (Philosophy) -- Fiction",
+        "Conduct of life -- Fiction",
+        "Didactic fiction",
+        "Great Britain -- History -- Victoria, 1837-1901 -- Fiction",
+        "London (England) -- History -- 1800-1950 -- Fiction",
+        "Paranormal fiction",
+        "Portraits -- Fiction",
+        "Supernatural -- Fiction"
+      ],
+      "bookshelves": [
+        "Gothic Fiction",
+        "Movie Books"
+      ],
+      "languages": [
+        "en"
+      ],
+      "copyright": false,
+      "media_type": "Text",
+      "formats": {
+        "text/html": "https://www.gutenberg.org/ebooks/174.html.images",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/174.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/174.kf8.images",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/174.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/174/pg174.cover.medium.jpg",
+        "application/octet-stream": "https://www.gutenberg.org/files/174/174-0.zip",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/174.txt.utf-8"
+      },
+      "download_count": 19378
     },
     {
       "id": 64317,
@@ -1049,49 +933,8 @@
       "download_count": 18444
     },
     {
-      "id": 43,
-      "title": "The Strange Case of Dr. Jekyll and Mr. Hyde",
-      "authors": [
-        {
-          "name": "Stevenson, Robert Louis",
-          "birth_year": 1850,
-          "death_year": 1894
-        }
-      ],
-      "translators": [],
-      "subjects": [
-        "Horror tales",
-        "London (England) -- Fiction",
-        "Multiple personality -- Fiction",
-        "Physicians -- Fiction",
-        "Psychological fiction",
-        "Science fiction",
-        "Self-experimentation in medicine -- Fiction"
-      ],
-      "bookshelves": [
-        "Horror",
-        "Movie Books",
-        "Precursors of Science Fiction"
-      ],
-      "languages": [
-        "en"
-      ],
-      "copyright": false,
-      "media_type": "Text",
-      "formats": {
-        "text/html": "https://www.gutenberg.org/ebooks/43.html.images",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/43.epub3.images",
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/43.kf8.images",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/43.rdf",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/43/pg43.cover.medium.jpg",
-        "application/octet-stream": "https://www.gutenberg.org/files/43/43-0.zip",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/43.txt.utf-8"
-      },
-      "download_count": 16857
-    },
-    {
-      "id": 1400,
-      "title": "Great Expectations",
+      "id": 98,
+      "title": "A Tale of Two Cities",
       "authors": [
         {
           "name": "Dickens, Charles",
@@ -1101,17 +944,18 @@
       ],
       "translators": [],
       "subjects": [
-        "Benefactors -- Fiction",
-        "Bildungsromans",
-        "England -- Fiction",
-        "Ex-convicts -- Fiction",
-        "Man-woman relationships -- Fiction",
-        "Orphans -- Fiction",
-        "Revenge -- Fiction",
-        "Young men -- Fiction"
+        "British -- France -- Paris -- Fiction",
+        "Executions and executioners -- Fiction",
+        "France -- History -- Revolution, 1789-1799 -- Fiction",
+        "French -- England -- London -- Fiction",
+        "Historical fiction",
+        "London (England) -- History -- 18th century -- Fiction",
+        "Lookalikes -- Fiction",
+        "Paris (France) -- History -- 1789-1799 -- Fiction",
+        "War stories"
       ],
       "bookshelves": [
-        "Best Books Ever Listings"
+        "Historical Fiction"
       ],
       "languages": [
         "en"
@@ -1119,15 +963,94 @@
       "copyright": false,
       "media_type": "Text",
       "formats": {
-        "text/html": "https://www.gutenberg.org/ebooks/1400.html.images",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/1400.epub3.images",
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1400.kf8.images",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/1400.txt.utf-8",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/1400.rdf",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/1400/pg1400.cover.medium.jpg",
-        "application/octet-stream": "https://www.gutenberg.org/cache/epub/1400/pg1400-h.zip"
+        "text/html": "https://www.gutenberg.org/ebooks/98.html.images",
+        "text/html; charset=utf-8": "https://www.gutenberg.org/files/98/98-h/98-h.htm",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/98.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/98.kf8.images",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/files/98/98-0.txt",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/98.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/98/pg98.cover.medium.jpg",
+        "application/octet-stream": "https://www.gutenberg.org/cache/epub/98/pg98-h.zip",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/98.txt.utf-8"
       },
-      "download_count": 16169
+      "download_count": 17514
+    },
+    {
+      "id": 2000,
+      "title": "Don Quijote",
+      "authors": [
+        {
+          "name": "Cervantes Saavedra, Miguel de",
+          "birth_year": 1547,
+          "death_year": 1616
+        }
+      ],
+      "translators": [],
+      "subjects": [
+        "Knights and knighthood -- Spain -- Fiction",
+        "Picaresque literature",
+        "Romances",
+        "Spain -- Social life and customs -- 16th century -- Fiction"
+      ],
+      "bookshelves": [
+        "6 Best Loved Spanish Literary Classics",
+        "Best Books Ever Listings",
+        "Harvard Classics"
+      ],
+      "languages": [
+        "es"
+      ],
+      "copyright": false,
+      "media_type": "Text",
+      "formats": {
+        "text/html": "https://www.gutenberg.org/ebooks/2000.html.images",
+        "text/html; charset=utf-8": "https://www.gutenberg.org/files/2000/2000-h/2000-h.htm",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/2000.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/2000.kf8.images",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/files/2000/2000-0.txt",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/2000.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/2000/pg2000.cover.medium.jpg",
+        "application/octet-stream": "https://www.gutenberg.org/cache/epub/2000/pg2000-h.zip",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/2000.txt.utf-8"
+      },
+      "download_count": 16728
+    },
+    {
+      "id": 1661,
+      "title": "The Adventures of Sherlock Holmes",
+      "authors": [
+        {
+          "name": "Doyle, Arthur Conan",
+          "birth_year": 1859,
+          "death_year": 1930
+        }
+      ],
+      "translators": [],
+      "subjects": [
+        "Detective and mystery stories, English",
+        "Holmes, Sherlock (Fictitious character) -- Fiction",
+        "Private investigators -- England -- Fiction"
+      ],
+      "bookshelves": [
+        "Banned Books from Anne Haight's list",
+        "Contemporary Reviews",
+        "Detective Fiction"
+      ],
+      "languages": [
+        "en"
+      ],
+      "copyright": false,
+      "media_type": "Text",
+      "formats": {
+        "text/html": "https://www.gutenberg.org/ebooks/1661.html.images",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/1661.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1661.kf8.images",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/1661.txt.utf-8",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/1661.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/1661/pg1661.cover.medium.jpg",
+        "application/octet-stream": "https://www.gutenberg.org/cache/epub/1661/pg1661-h.zip"
+      },
+      "download_count": 15944
     },
     {
       "id": 28054,
@@ -1172,44 +1095,40 @@
       "download_count": 15315
     },
     {
-      "id": 2000,
-      "title": "Don Quijote",
+      "id": 2542,
+      "title": "A Doll's House : a play",
       "authors": [
         {
-          "name": "Cervantes Saavedra, Miguel de",
-          "birth_year": 1547,
-          "death_year": 1616
+          "name": "Ibsen, Henrik",
+          "birth_year": 1828,
+          "death_year": 1906
         }
       ],
       "translators": [],
       "subjects": [
-        "Knights and knighthood -- Spain -- Fiction",
-        "Picaresque literature",
-        "Romances",
-        "Spain -- Social life and customs -- 16th century -- Fiction"
+        "Man-woman relationships -- Drama",
+        "Marriage -- Drama",
+        "Norwegian drama -- Translations into English",
+        "Wives -- Drama"
       ],
       "bookshelves": [
-        "6 Best Loved Spanish Literary Classics",
-        "Best Books Ever Listings",
-        "Harvard Classics"
+        "Best Books Ever Listings"
       ],
       "languages": [
-        "es"
+        "en"
       ],
       "copyright": false,
       "media_type": "Text",
       "formats": {
-        "text/html": "https://www.gutenberg.org/ebooks/2000.html.images",
-        "text/html; charset=utf-8": "https://www.gutenberg.org/files/2000/2000-h/2000-h.htm",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/2000.epub3.images",
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/2000.kf8.images",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/files/2000/2000-0.txt",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/2000.rdf",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/2000/pg2000.cover.medium.jpg",
-        "application/octet-stream": "https://www.gutenberg.org/cache/epub/2000/pg2000-h.zip",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/2000.txt.utf-8"
+        "text/html": "https://www.gutenberg.org/ebooks/2542.html.images",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/2542.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/2542.kf8.images",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/2542.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/2542/pg2542.cover.medium.jpg",
+        "application/octet-stream": "https://www.gutenberg.org/files/2542/2542-0.zip",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/2542.txt.utf-8"
       },
-      "download_count": 14926
+      "download_count": 14039
     },
     {
       "id": 76,
@@ -1254,7 +1173,93 @@
         "image/jpeg": "https://www.gutenberg.org/cache/epub/76/pg76.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/76/pg76-h.zip"
       },
-      "download_count": 14820
+      "download_count": 13945
+    },
+    {
+      "id": 1952,
+      "title": "The Yellow Wallpaper",
+      "authors": [
+        {
+          "name": "Gilman, Charlotte Perkins",
+          "birth_year": 1860,
+          "death_year": 1935
+        }
+      ],
+      "translators": [],
+      "subjects": [
+        "Feminist fiction",
+        "Married women -- Psychology -- Fiction",
+        "Mentally ill women -- Fiction",
+        "Psychological fiction",
+        "Sex role -- Fiction"
+      ],
+      "bookshelves": [
+        "Gothic Fiction"
+      ],
+      "languages": [
+        "en"
+      ],
+      "copyright": false,
+      "media_type": "Text",
+      "formats": {
+        "text/html": "https://www.gutenberg.org/ebooks/1952.html.images",
+        "text/html; charset=utf-8": "https://www.gutenberg.org/files/1952/1952-h/1952-h.htm",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/1952.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1952.kf8.images",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/files/1952/1952-0.txt",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/1952.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/1952/pg1952.cover.medium.jpg",
+        "application/octet-stream": "https://www.gutenberg.org/cache/epub/1952/pg1952-h.zip",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/1952.txt.utf-8"
+      },
+      "download_count": 12990
+    },
+    {
+      "id": 4300,
+      "title": "Ulysses",
+      "authors": [
+        {
+          "name": "Joyce, James",
+          "birth_year": 1882,
+          "death_year": 1941
+        }
+      ],
+      "translators": [],
+      "subjects": [
+        "Alienation (Social psychology) -- Fiction",
+        "Artists -- Fiction",
+        "City and town life -- Fiction",
+        "Domestic fiction",
+        "Dublin (Ireland) -- Fiction",
+        "Epic literature",
+        "Jewish men -- Fiction",
+        "Male friendship -- Fiction",
+        "Married people -- Fiction",
+        "Psychological fiction"
+      ],
+      "bookshelves": [
+        "Banned Books List from the American Library Association",
+        "Banned Books from Anne Haight's list",
+        "Best Books Ever Listings",
+        "Erotic Fiction"
+      ],
+      "languages": [
+        "en"
+      ],
+      "copyright": false,
+      "media_type": "Text",
+      "formats": {
+        "text/html": "https://www.gutenberg.org/ebooks/4300.html.images",
+        "text/html; charset=utf-8": "https://www.gutenberg.org/files/4300/4300-h/4300-h.htm",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/4300.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/4300.kf8.images",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/files/4300/4300-0.txt",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/4300.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/4300/pg4300.cover.medium.jpg",
+        "application/octet-stream": "https://www.gutenberg.org/cache/epub/4300/pg4300-h.zip",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/ebooks/4300.txt.utf-8"
+      },
+      "download_count": 12633
     }
   ]
 }

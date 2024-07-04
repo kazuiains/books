@@ -17,7 +17,7 @@ void main() {
   databaseFactory = databaseFactoryFfi;
 
   late Database database;
-  BookLocalDataSourceImpl? dataSource;
+  late BookLocalDataSourceImpl dataSource;
 
   setUp(() async {
     AppConfig(flavor: Flavor.development);
@@ -54,12 +54,12 @@ void main() {
 
           /// act
           // delete all data
-          await database.delete(dataSource!.tableName);
-          await database.update('sqlite_sequence', {'seq': 0}, where: 'name = ?', whereArgs: [dataSource!.tableName]);
+          await database.delete(dataSource.tableName);
+          await database.update('sqlite_sequence', {'seq': 0}, where: 'name = ?', whereArgs: [dataSource.tableName]);
           // backup data
-          final actual = await dataSource?.backupBook(data, 1);
+          final actual = await dataSource.backupBook(data, 1);
           // get data from db
-          final response = await database.query(dataSource!.tableName);
+          final response = await database.query(dataSource.tableName);
           List<BookModel> results = response.isNotEmpty
               ? response
                   .map<BookModel>(
@@ -81,9 +81,9 @@ void main() {
 
           /// act
           // backup data
-          final actual = await dataSource?.backupBook(data, 2);
+          final actual = await dataSource.backupBook(data, 2);
           // get data from db
-          final response = await database.query(dataSource!.tableName);
+          final response = await database.query(dataSource.tableName);
           List<BookModel> results = response.isNotEmpty
               ? response
                   .map<BookModel>(
@@ -120,25 +120,25 @@ void main() {
       );
 
       test(
-        'list data',
+        'fetch data list by default',
         () async {
           var request = BookRequestModel(page: "2");
           var expectData = expectJson(data: listBook, page: 2);
 
           /// act
-          final actual = await dataSource?.listBook(request);
-          final List list = actual?.results;
+          final actual = await dataSource.listBook(request);
+          final List list = actual.results;
           List<BookModel> result = list.isNotEmpty ? list as List<BookModel> : [];
 
           /// assert
-          expect(actual?.next, "3");
-          expect(actual?.previous, "1");
+          expect(actual.next, "3");
+          expect(actual.previous, "1");
           expect(actualJson(result), expectData);
         },
       );
 
       test(
-        'search data',
+        'retrieval of list data based on search',
         () async {
           var request = BookRequestModel(
             search: "Romeo and Juliet",
@@ -146,13 +146,13 @@ void main() {
           var expectData = expectJson(data: searchBook, page: 2);
 
           /// act
-          final actual = await dataSource?.listBook(request);
-          final List list = actual?.results;
+          final actual = await dataSource.listBook(request);
+          final List list = actual.results;
           List<BookModel> result = list.isNotEmpty ? list as List<BookModel> : [];
 
           /// assert
-          expect(actual?.next, "2");
-          expect(actual?.previous, null);
+          expect(actual.next, "2");
+          expect(actual.previous, null);
           expect(actualJson(result), expectData);
         },
       );
@@ -172,7 +172,7 @@ void main() {
         'like book',
         () async {
           /// act
-          final actual = await dataSource?.updateBook(
+          final actual = await dataSource.updateBook(
             BookModel.fromEntity(
               book.copyWith(
                 favorite: true,
@@ -180,7 +180,7 @@ void main() {
             ),
           );
           final response = await database.query(
-            dataSource!.tableName,
+            dataSource.tableName,
             where: '$bookModelColumn1 = ?',
             whereArgs: [book.id],
           );
@@ -196,7 +196,7 @@ void main() {
         'dislike book',
         () async {
           /// act
-          final actual = await dataSource?.updateBook(
+          final actual = await dataSource.updateBook(
             BookModel.fromEntity(
               book.copyWith(
                 favorite: false,
@@ -204,7 +204,7 @@ void main() {
             ),
           );
           final response = await database.query(
-            dataSource!.tableName,
+            dataSource.tableName,
             where: '$bookModelColumn1 = ?',
             whereArgs: [book.id],
           );
@@ -255,12 +255,12 @@ void main() {
 
           /// act
           // backup data
-          await dataSource?.backupBook(data, 2);
+          await dataSource.backupBook(data, 2);
           // get data from db
-          final actual = await dataSource?.listFavorite();
+          final actual = await dataSource.listFavorite();
 
           /// assert
-          expect(actualJson(actual ?? []), expectData);
+          expect(actualJson(actual), expectData);
         },
       );
     },
