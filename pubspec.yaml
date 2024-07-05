@@ -47,7 +47,7 @@ dependencies:
   get: ^4.6.6
 
   #HTTP Client
-  dio: ^5.4.3+1
+  dio: ^5.5.0
 
   #Database Local
   sqflite: ^2.3.3+1
@@ -73,7 +73,8 @@ dev_dependencies:
     sdk: flutter
 
   mockito: ^5.4.4
-  sqflite_common_ffi: ^2.0.0
+  sqflite_common_ffi: ^2.3.3
+  build_runner: ^2.4.11
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
