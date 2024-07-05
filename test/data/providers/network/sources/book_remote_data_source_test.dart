@@ -209,4 +209,93 @@ void main() {
       );
     },
   );
+
+  group(
+    'readBook',
+    () {
+      test(
+        'get html content book.',
+        () async {
+          // Mock data and response
+          const url = 'https://www.gutenberg.org/ebooks/17013.html.images';
+          const urlPath = '/ebooks/17013.html.images';
+          final bookHtml = fixture('remote/book.html');
+          final response = Response(
+            data: bookHtml,
+            statusCode: 200,
+            requestOptions: RequestOptions(path: urlPath),
+            statusMessage: 'OK',
+            headers: Headers.fromMap(
+              {
+                'content-type': ['text/html']
+              },
+            ),
+          );
+
+          // arrange
+          when(
+            mockDio.get(
+              urlPath,
+              queryParameters: anyNamed('queryParameters'),
+              options: anyNamed('options'),
+              cancelToken: anyNamed('cancelToken'),
+              onReceiveProgress: anyNamed('onReceiveProgress'),
+            ),
+          ).thenAnswer(
+            (_) async => response,
+          );
+
+          // act
+          final result = await dataSource.readBook(url);
+
+          // assert
+          expect(result, contains('</html>'));
+          expect(result, contains('</body>'));
+          expect(result, bookHtml);
+        },
+      );
+      test(
+        'should throw a ServerException when the response code is 404 or other',
+        () async {
+          // Mock data and response
+          const url = 'https://www.gutenberg.org/ebooks/17013.html.images';
+          const urlPath = '/ebooks/17013.html.images';
+          final responseJson = {"detail": "Invalid page."};
+          final errorResponse = DioException(
+            requestOptions: RequestOptions(path: urlPath),
+            response: Response(
+              data: responseJson,
+              statusCode: 404,
+              requestOptions: RequestOptions(path: urlPath),
+            ),
+            type: DioExceptionType.badResponse,
+          );
+
+          // arrange
+          when(
+            mockDio.get(
+              url,
+              queryParameters: anyNamed('queryParameters'),
+              options: anyNamed('options'),
+              cancelToken: anyNamed('cancelToken'),
+              onReceiveProgress: anyNamed('onReceiveProgress'),
+            ),
+          ).thenThrow(
+            errorResponse,
+          );
+
+          // act
+          final call = dataSource.readBook;
+
+          // assert
+          expect(
+            () => call(
+              url,
+            ),
+            throwsA(isA<ApiException>()),
+          );
+        },
+      );
+    },
+  );
 }
