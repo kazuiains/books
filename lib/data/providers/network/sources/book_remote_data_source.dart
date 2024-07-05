@@ -9,7 +9,7 @@ abstract class BookRemoteDataSource {
     BookRequestModel data,
   );
 
-  Future<dynamic> readBook(String data);
+  Future<String> readBook(String data);
 }
 
 class BookRemoteDataSourceImpl extends ApiDataSource implements BookRemoteDataSource {
@@ -37,7 +37,7 @@ class BookRemoteDataSourceImpl extends ApiDataSource implements BookRemoteDataSo
   }
 
   @override
-  Future<dynamic> readBook(String data) async {
+  Future<String> readBook(String data) async {
     Uri uri = Uri.parse(data);
 
     return await execute(
