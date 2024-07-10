@@ -58,7 +58,7 @@ class BookLocalDataSourceImpl with QueryHelper implements BookLocalDataSource {
       Batch batch = database.batch();
 
       for (var i in data) {
-        var items = dataLocal.where((i) => i.id == i.id);
+        var items = dataLocal.where((model) => model.id == i.id);
         Map<String, dynamic> tableData = BookModel.fromEntity(
           i.copyWith(
             page: page,
