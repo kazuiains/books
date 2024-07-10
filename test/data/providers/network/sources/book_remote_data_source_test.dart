@@ -19,7 +19,6 @@ void main() {
   late BookRemoteDataSourceImpl dataSource;
 
   setUp(() {
-    AppConfig(flavor: Flavor.development);
     mockDio = MockDio();
     dataSource = BookRemoteDataSourceImpl(dio: mockDio);
   });
