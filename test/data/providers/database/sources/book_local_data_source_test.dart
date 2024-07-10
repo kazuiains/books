@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:books/data/models/request/book_request_model.dart';
 import 'package:books/data/models/response/book_model.dart';
 import 'package:books/data/providers/database/sources/book_local_data_source.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -55,7 +56,7 @@ void main() {
       }
       for (var i in data) {
         var items = backupData.where((model) => model.id == i.id);
-        if(items.isEmpty){
+        if (items.isEmpty) {
           newData.add(i);
         }
       }
@@ -210,65 +211,106 @@ void main() {
     },
   );
 
-  // group(
-  //   'listBook',
-  //   () {
-  //     List<BookModel> listBook = [];
-  //     var listBookJsonData = json.decode(fixture('local/book_list.json'));
-  //     listBookJsonData["results"].forEach(
-  //       (v) {
-  //         listBook.add(BookModel.fromJson(v));
-  //       },
-  //     );
-  //
-  //     List<BookModel> searchBook = [];
-  //     var searchBookJsonData = json.decode(fixture('local/book_search.json'));
-  //     searchBookJsonData["results"].forEach(
-  //       (v) {
-  //         searchBook.add(BookModel.fromJson(v));
-  //       },
-  //     );
-  //
-  //     test(
-  //       'fetch data list by default',
-  //       () async {
-  //         var request = BookRequestModel(page: "2");
-  //         var expectData = expectJson(data: listBook, page: 2);
-  //
-  //         /// act
-  //         final actual = await dataSource.listBook(request);
-  //         final List list = actual.results;
-  //         List<BookModel> result = list.isNotEmpty ? list as List<BookModel> : [];
-  //
-  //         /// assert
-  //         expect(actual.next, "3");
-  //         expect(actual.previous, "1");
-  //         expect(actualJson(result), expectData);
-  //       },
-  //     );
-  //
-  //     test(
-  //       'retrieval of list data based on search',
-  //       () async {
-  //         var request = BookRequestModel(
-  //           search: "Romeo and Juliet",
-  //         );
-  //         var expectData = expectJson(data: searchBook, page: 2);
-  //
-  //         /// act
-  //         final actual = await dataSource.listBook(request);
-  //         final List list = actual.results;
-  //         List<BookModel> result = list.isNotEmpty ? list as List<BookModel> : [];
-  //
-  //         /// assert
-  //         expect(actual.next, "2");
-  //         expect(actual.previous, null);
-  //         expect(actualJson(result), expectData);
-  //       },
-  //     );
-  //   },
-  // );
-  //
+  group(
+    'listBook',
+    () {
+      List<BookModel> listBook = [];
+      var listBookJsonData = json.decode(fixture('local/book_list.json'));
+      listBookJsonData["results"].forEach(
+        (v) {
+          listBook.add(BookModel.fromJson(v));
+        },
+      );
+
+      List<BookModel> searchBook = [];
+      var searchBookJsonData = json.decode(fixture('local/book_search.json'));
+      searchBookJsonData["results"].forEach(
+        (v) {
+          searchBook.add(BookModel.fromJson(v));
+        },
+      );
+
+      test(
+        'fetch data list by default',
+        () async {
+          var expectData = expectJson(data: listBook, page: 2);
+
+          // arrange
+          when(
+            mockDatabase.query(
+              dataSource.tableName,
+              columns: anyNamed('columns'),
+              where: anyNamed('where'),
+              whereArgs: anyNamed('whereArgs'),
+            ),
+          ).thenAnswer(
+            (_) async => expectData,
+          );
+
+          /// act
+          var request = BookRequestModel(page: "2");
+          final actual = await dataSource.listBook(request);
+          final List list = actual.results;
+          List<BookModel> result = list.isNotEmpty ? list as List<BookModel> : [];
+
+          /// assert
+          expect(actual.next, "3");
+          expect(actual.previous, "1");
+          expect(actualJson(result), expectData);
+
+          verify(
+            mockDatabase.query(
+              dataSource.tableName,
+              columns: anyNamed('columns'),
+              where: anyNamed('where'),
+              whereArgs: anyNamed('whereArgs'),
+            ),
+          ).called(1);
+        },
+      );
+
+      test(
+        'retrieval of list data based on search',
+        () async {
+          var expectData = expectJson(data: searchBook, page: 1);
+
+          // arrange
+          when(
+            mockDatabase.query(
+              dataSource.tableName,
+              columns: anyNamed('columns'),
+              where: anyNamed('where'),
+              whereArgs: anyNamed('whereArgs'),
+            ),
+          ).thenAnswer(
+            (_) async => expectData,
+          );
+
+          /// act
+          var request = BookRequestModel(
+            search: "Romeo and Juliet",
+          );
+          final actual = await dataSource.listBook(request);
+          final List list = actual.results;
+          List<BookModel> result = list.isNotEmpty ? list as List<BookModel> : [];
+
+          /// assert
+          expect(actual.next, "2");
+          expect(actual.previous, null);
+          expect(actualJson(result), expectData);
+
+          verify(
+            mockDatabase.query(
+              dataSource.tableName,
+              columns: anyNamed('columns'),
+              where: anyNamed('where'),
+              whereArgs: anyNamed('whereArgs'),
+            ),
+          ).called(1);
+        },
+      );
+    },
+  );
   // group(
   //   'updateBook',
   //   () {
