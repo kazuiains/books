@@ -251,7 +251,8 @@ void main() {
           var request = BookRequestModel(page: "2");
           final actual = await dataSource.listBook(request);
           final List list = actual.results;
-          List<BookModel> result = list.isNotEmpty ? list as List<BookModel> : [];
+          List<BookModel> result =
+              list.isNotEmpty ? list as List<BookModel> : [];
 
           /// assert
           expect(actual.next, "3");
@@ -292,7 +293,8 @@ void main() {
           );
           final actual = await dataSource.listBook(request);
           final List list = actual.results;
-          List<BookModel> result = list.isNotEmpty ? list as List<BookModel> : [];
+          List<BookModel> result =
+              list.isNotEmpty ? list as List<BookModel> : [];
 
           /// assert
           expect(actual.next, "2");
@@ -311,64 +313,127 @@ void main() {
       );
     },
   );
-  // group(
-  //   'updateBook',
-  //   () {
-  //     BookModel book = BookModel.fromJson(
-  //       json.decode(
-  //         fixture('local/book.json'),
-  //       ),
-  //     );
-  //
-  //     test(
-  //       'like book',
-  //       () async {
-  //         /// act
-  //         final actual = await dataSource.updateBook(
-  //           BookModel.fromEntity(
-  //             book.copyWith(
-  //               favorite: true,
-  //             ),
-  //           ),
-  //         );
-  //         final response = await mockDatabase.query(
-  //           dataSource.tableName,
-  //           where: '$bookModelColumn1 = ?',
-  //           whereArgs: [book.id],
-  //         );
-  //         BookModel results = response.isNotEmpty ? BookModel.fromTable(response.first) : BookModel();
-  //
-  //         /// assert
-  //         expect(actual, true);
-  //         expect(results.favorite, true);
-  //       },
-  //     );
-  //
-  //     test(
-  //       'dislike book',
-  //       () async {
-  //         /// act
-  //         final actual = await dataSource.updateBook(
-  //           BookModel.fromEntity(
-  //             book.copyWith(
-  //               favorite: false,
-  //             ),
-  //           ),
-  //         );
-  //         final response = await mockDatabase.query(
-  //           dataSource.tableName,
-  //           where: '$bookModelColumn1 = ?',
-  //           whereArgs: [book.id],
-  //         );
-  //         BookModel results = response.isNotEmpty ? BookModel.fromTable(response.first) : BookModel();
-  //
-  //         /// assert
-  //         expect(actual, true);
-  //         expect(results.favorite, false);
-  //       },
-  //     );
-  //   },
-  // );
+
+  group(
+    'updateBook',
+    () {
+      BookModel book = BookModel.fromJson(
+        json.decode(
+          fixture('local/book.json'),
+        ),
+      );
+
+      test(
+        'do not have data book',
+        () async {
+          // arrange
+          when(
+            mockDatabase.query(
+              dataSource.tableName,
+              columns: anyNamed('columns'),
+              where: anyNamed('where'),
+              whereArgs: anyNamed('whereArgs'),
+            ),
+          ).thenAnswer(
+            (_) async => [],
+          );
+
+          when(
+            mockDatabase.insert(
+              dataSource.tableName,
+              any,
+            ),
+          ).thenAnswer(
+            (_) async => 1,
+          );
+
+          /// act
+          final actual = await dataSource.updateBook(
+            BookModel.fromEntity(
+              book.copyWith(
+                favorite: true,
+              ),
+            ),
+          );
+
+          /// assert
+          expect(actual, true);
+          verify(
+            mockDatabase.query(
+              dataSource.tableName,
+              columns: anyNamed('columns'),
+              where: anyNamed('where'),
+              whereArgs: anyNamed('whereArgs'),
+            ),
+          ).called(1);
+          verify(
+            mockDatabase.insert(
+              dataSource.tableName,
+              any,
+            ),
+          ).called(1);
+        },
+      );
+
+      test(
+        'have data book',
+        () async {
+          // arrange
+          when(
+            mockDatabase.query(
+              dataSource.tableName,
+              columns: anyNamed('columns'),
+              where: anyNamed('where'),
+              whereArgs: anyNamed('whereArgs'),
+            ),
+          ).thenAnswer(
+            (_) async => [
+              book.toTable(),
+            ],
+          );
+
+          when(
+            mockDatabase.update(
+              dataSource.tableName,
+              any,
+              where: anyNamed('where'),
+              whereArgs: anyNamed('whereArgs'),
+            ),
+          ).thenAnswer(
+            (_) async => 1,
+          );
+
+          /// act
+          final actual = await dataSource.updateBook(
+            BookModel.fromEntity(
+              book.copyWith(
+                favorite: false,
+              ),
+            ),
+          );
+
+          /// assert
+          expect(actual, true);
+          verify(
+            mockDatabase.query(
+              dataSource.tableName,
+              columns: anyNamed('columns'),
+              where: anyNamed('where'),
+              whereArgs: anyNamed('whereArgs'),
+            ),
+          ).called(1);
+          verify(
+            mockDatabase.update(
+              dataSource.tableName,
+              any,
+              where: anyNamed('where'),
+              whereArgs: anyNamed('whereArgs'),
+            ),
+          ).called(1);
+        },
+      );
+    },
+  );
   //
   // group(
   //   'listFavorite',
