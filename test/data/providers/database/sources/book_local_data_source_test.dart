@@ -434,54 +434,62 @@ void main() {
       );
     },
   );
-  //
-  // group(
-  //   'listFavorite',
-  //   () {
-  //     List<BookModel> data = [];
-  //     var args = <String>[];
-  //
-  //     var jsonData = json.decode(fixture('local/book_favorite.json'));
-  //
-  //     jsonData["results"].forEach(
-  //       (v) {
-  //         data.add(
-  //           BookModel.fromEntity(
-  //             BookModel.fromJson(v).copyWith(
-  //               favorite: true,
-  //             ),
-  //           ),
-  //         );
-  //       },
-  //     );
-  //
-  //     for (var i in data) {
-  //       if (i.id != null) {
-  //         args.add("${i.id}");
-  //       }
-  //     }
-  //
-  //     test(
-  //       'list of all your favorite books',
-  //       () async {
-  //         var expectData = expectJson(
-  //           data: data,
-  //           favorite: true,
-  //           page: 2,
-  //         );
-  //
-  //         /// act
-  //         // backup data
-  //         await dataSource.backupBook(data, 2);
-  //         // get data from db
-  //         final actual = await dataSource.listFavorite();
-  //
-  //         /// assert
-  //         expect(actualJson(actual), expectData);
-  //       },
-  //     );
-  //   },
-  // );
+
+  group(
+    'listFavorite',
+    () {
+      List<BookModel> data = [];
+      var jsonData = json.decode(fixture('local/book_favorite.json'));
+      jsonData["results"].forEach(
+        (v) {
+          data.add(
+            BookModel.fromEntity(
+              BookModel.fromJson(v).copyWith(
+                favorite: true,
+              ),
+            ),
+          );
+        },
+      );
+
+      test(
+        'list of all your favorite books',
+        () async {
+          var expectData = expectJson(
+            data: data,
+            favorite: true,
+            page: 2,
+          );
+
+          // arrange
+          when(
+            mockDatabase.query(
+              dataSource.tableName,
+              columns: anyNamed('columns'),
+              where: anyNamed('where'),
+              whereArgs: anyNamed('whereArgs'),
+            ),
+          ).thenAnswer(
+                (_) async => expectData,
+          );
+
+          /// act
+          final actual = await dataSource.listFavorite();
+
+          /// assert
+          expect(actualJson(actual), expectData);
+          verify(
+            mockDatabase.query(
+              dataSource.tableName,
+              columns: anyNamed('columns'),
+              where: anyNamed('where'),
+              whereArgs: anyNamed('whereArgs'),
+            ),
+          ).called(1);
+        },
+      );
+    },
+  );
 }
 
 List<Map<String, Object?>> expectJson({
